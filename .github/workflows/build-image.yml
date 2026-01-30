@@ -141,9 +141,9 @@ jobs:
           sudo umount /mnt/root
           sudo losetup -d "$LOOP"
 
-          # Compress
+          # Compress (use -6 and 2 threads to stay within 4GB RAM limit)
           echo "Compressing image..."
-          xz -9 -T0 ruben-fpv.img
+          xz -6 -T2 ruben-fpv.img
 
           echo "Done!"
           ls -lh ruben-fpv.img.xz
